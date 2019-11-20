@@ -9,6 +9,8 @@
   "author": "MendesRafa",
   "license": "ISC",
   "dependencies": {
+    "@octokit/plugin-retry": "^2.2.0",
+    "@octokit/plugin-throttling": "^2.7.0",
     "@octokit/rest": "^16.34.0"
   }
 }
