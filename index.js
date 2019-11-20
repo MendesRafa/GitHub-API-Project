@@ -31,14 +31,27 @@ const octokit = Octokit({
 })
 
 async function getData() {
+    var data = await octokit.search.repos({
+      q: "hackathon + topic:hackathon",
+      per_page: 100
+    });
 
-  var data = await octokit.search.repos({
-    q: "hackathon + topic:hackathon",
-    per_page: 100
-  });
+    console.log(data);
+    /** 
+    var i;
 
-  console.log(data);
+    for(i=0; i<100; i++){
+      var repoName = data.data.items[i].name;
 
+      console.log(repoName);
+
+      var result = await octokit.request(data.data.items[i].languages_url);
+
+      var languages = result.data;
+
+      console.log(languages);
+    }
+    */
 }
 
 getData();
