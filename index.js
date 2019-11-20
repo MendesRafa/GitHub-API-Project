@@ -31,13 +31,14 @@ const octokit = Octokit({
 })
 
 async function getData() {
+  var j;
+  for (j=1; j<11; j++){
     var data = await octokit.search.repos({
       q: "hackathon + topic:hackathon",
-      per_page: 100
+      per_page: 100,
+      page: j
     });
-
-    console.log(data);
-    /** 
+     
     var i;
 
     for(i=0; i<100; i++){
@@ -51,7 +52,7 @@ async function getData() {
 
       console.log(languages);
     }
-    */
+  }
 }
 
 getData();
