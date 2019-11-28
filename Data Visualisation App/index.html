@@ -8,17 +8,16 @@
     <script src="https://d3js.org/d3-path.v1.min.js"></script>
     <script src="https://d3js.org/d3-shape.v1.min.js"></script>
     <script>
-        var data = [{ "JavaScript": 151628141, "HTML": 102443285, "CSS": 35473288, "Dockerfile": 41873, "PHP": 35345539, "ApacheConf": 31194, "Shell": 329899, "Swift": 1694785, "Python": 32787679, "TypeScript": 3513368, "Java": 17620401, "Vue": 939837, "Jupyter Notebook": 203547102, "PowerShell": 416132, "TeX": 188010, "MATLAB": 44693, "Ruby": 1150123, "C++": 8797387, "C": 650162, "Elm": 123768, "SuperCollider": 64639, "Makefile": 82809, "ActionScript": 3370, "Processing": 3042, "Go": 423700, "Objective-C": 2322755, "CoffeeScript": 84556, "C#": 10525403, "PLSQL": 1309481, "GLSL": 419812, "CMake": 15495, "R": 232158, "Batchfile": 27311, "Nginx": 1567, "HCL": 7769, "Smarty": 5545, "Kotlin": 833344, "Assembly": 2608, "Common Lisp": 2469, "Dart": 486838, "TSQL": 111384, "COBOL": 132, "Befunge": 24, "Perl": 5822, "Rebol": 21, "Arduino": 47423, "Hack": 76417, "PLpgSQL": 26409, "Solidity": 14631, "ASP": 86836, "RAML": 4119, "Rust": 51391, "Perl 6": 10818, "IDL": 933599, "Prolog": 192988, "LiveScript": 101240, "Vim script": 5418, "M": 1508, "Pascal": 151541, "Mako": 1812, "Max": 24967, "Nextflow": 9013, "Puppet": 25968, "Forth": 85148, "F#": 3209, "Scala": 364012, "ShaderLab": 454795, "Objective-C++": 1800, "Mathematica": 1724802, "Verilog": 1150, "HLSL": 72320, "Game Maker Language": 678026, "VCL": 1770, "Visual Basic": 73413, "Groovy": 29481, "QML": 15363, "Haskell": 31372, "XSLT": 83972, "Roff": 3620, "WebAssembly": 445001, "Elixir": 55429, "Volt": 24914, "Rich Text Format": 12985, "Metal": 2882 }];
+        var data = [["Jupyter Notebook", 203547102], ["JavaScript", 151628141], ["HTML", 102443285], ["CSS", 35473288], ["PHP", 35345539], ["Python", 32787679], ["Java", 17620401], ["C#", 10525403], ["C++", 8797387], ["TypeScript", 3513368], ["Objective-C", 2322755], ["Mathematica", 1724802], ["Swift", 1694785], ["PLSQL", 1309481], ["Ruby", 1150123], ["Vue", 939837], ["IDL", 933599], ["Kotlin", 833344], ["Game Maker Language", 678026], ["C", 650162], ["Dart", 486838], ["ShaderLab", 454795], ["WebAssembly", 445001], ["Go", 423700], ["GLSL", 419812], ["PowerShell", 416132], ["Scala", 364012], ["Shell", 329899], ["R", 232158], ["Prolog", 192988], ["TeX", 188010], ["Pascal", 151541], ["Elm", 123768], ["TSQL", 111384], ["LiveScript", 101240], ["ASP", 86836], ["Forth", 85148], ["CoffeeScript", 84556], ["XSLT", 83972], ["Makefile", 82809], ["Hack", 76417], ["Visual Basic", 73413], ["HLSL", 72320], ["SuperCollider", 64639], ["Elixir", 55429], ["Rust", 51391], ["Arduino", 47423], ["MATLAB", 44693], ["Dockerfile", 41873], ["Haskell", 31372], ["ApacheConf", 31194], ["Groovy", 29481], ["Batchfile", 27311], ["PLpgSQL", 26409], ["Puppet", 25968], ["Max", 24967], ["Volt", 24914], ["CMake", 15495], ["QML", 15363], ["Solidity", 14631], ["Rich Text Format", 12985], ["Perl 6", 10818], ["Nextflow", 9013], ["HCL", 7769], ["Perl", 5822], ["Smarty", 5545], ["Vim script", 5418], ["RAML", 4119], ["Roff", 3620], ["ActionScript", 3370], ["F#", 3209], ["Processing", 3042], ["Metal", 2882], ["Assembly", 2608], ["Common Lisp", 2469], ["Mako", 1812], ["Objective-C++", 1800], ["VCL", 1770], ["Nginx", 1567], ["M", 1508], ["Verilog", 1150], ["COBOL", 132], ["Befunge", 24], ["Rebol", 21]];
 
         var valArray = [];
         var keyArray = [];
-
-        for (var key in data[0]) {
-            if (data[0].hasOwnProperty(key)) {
-                keyArray.push(key);
-                valArray.push(data[0][key]);
-            }
+        var i;
+        for (i = 0; i < data.length; i++) {
+            keyArray.push(data[i][0]);
+            valArray.push(data[i][1]);
         }
+
 
         var width = 800;
         var height = 2000;
