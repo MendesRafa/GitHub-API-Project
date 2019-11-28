@@ -46,7 +46,19 @@ async function getData() {
             }
           }
 
-          var dataSet = JSON.stringify(result);
+          var sortedResult = [];
+
+          for(var key in result) {
+            sortedResult.push([key, result[key]]);
+          }
+
+          sortedResult.sort(function(a,b) {
+            return b[1] - a[1];
+          });
+
+          
+
+          var dataSet = JSON.stringify(sortedResult);
 
           fs.writeFileSync('data2.json', dataSet);
           
