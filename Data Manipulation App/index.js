@@ -56,11 +56,16 @@ async function getData() {
             return b[1] - a[1];
           });
 
-          
+          var limitedResult = [];
 
-          var dataSet = JSON.stringify(sortedResult);
+          for (i=0; i<25; i++) {
+            limitedResult.push(sortedResult[i]);
+          }
 
-          fs.writeFileSync('data2.json', dataSet);
+          var dataSet = JSON.stringify(limitedResult);
+
+
+          fs.writeFileSync('limited_data.json', dataSet);
           
         } catch(err) {
           console.log(err);
