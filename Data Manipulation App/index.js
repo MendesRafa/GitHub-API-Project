@@ -46,7 +46,9 @@ async function getData() {
             }
           }
 
-          fs.writeFileSync('./data.json', util.inspect(result) , 'utf-8');
+          var dataSet = JSON.stringify(result);
+
+          fs.writeFileSync('data2.json', dataSet);
           
         } catch(err) {
           console.log(err);
