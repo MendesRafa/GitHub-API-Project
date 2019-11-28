@@ -4,6 +4,8 @@
 </style>
 
 <body>
+    <h1>LANGUAGES USED IN REPOS</h1>
+    <H1>WHICH HAVE HACKATHON AS ONE OF THEIR TOPICS</H1>
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="https://d3js.org/d3-path.v1.min.js"></script>
     <script src="https://d3js.org/d3-shape.v1.min.js"></script>
@@ -19,7 +21,7 @@
         }
 
 
-        var width = 800;
+        var width = 1500;
         var height = 2000;
         var radius = 250;
 
@@ -44,7 +46,15 @@
             .data(pie(keyArray))
             .enter().append("g")
             .attr("transform", function (d, i) {
-                return "translate(" + (width - 250) + "," + (i * 15 + 20) + ")";
+                if (i < 30) {
+                    return "translate(" + (width - 975) + "," + (i * 15 + 20) + ")";
+                }
+                if (i >= 30 && i < 60) {
+                    return "translate(" + (width - 675) + "," + ((i - 30) * 15 + 20) + ")";
+                }
+                if (i >= 60) {
+                    return "translate(" + (width - 450) + "," + ((i - 60) * 15 + 20) + ")";
+                }
             })
             .attr("class", "legend");
 
